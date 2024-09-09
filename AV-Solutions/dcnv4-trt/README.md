@@ -161,7 +161,7 @@ To build a TensorRT engine, you can run the following command lines with trtexec
 # build the engine
 trtexec --onnx=./onnxfiles/sim_flash_intern_image_t_1k_224_fused.onnx \
         --fp16 \
-        --staticPlugins=libDCNv4_plugin.so
+        --staticPlugins=libDCNv4_plugin.so \
         --skipInference \
         --saveEngine=./engines/flash_intern_image_t_1k_224_fused_fp16.engine
 ```
@@ -169,7 +169,7 @@ You may also try with unfused onnxfile and compare the performance difference.
 ```bash
 trtexec --onnx=./onnxfiles/sim_flash_intern_image_t_1k_224.onnx \
         --fp16 \
-        --staticPlugins=libDCNv4_plugin.so
+        --staticPlugins=libDCNv4_plugin.so \
         --skipInference \
         --saveEngine=./engines/flash_intern_image_t_1k_224_fp16.engine
 ```
